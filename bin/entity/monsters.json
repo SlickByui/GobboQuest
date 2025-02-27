@@ -1,0 +1,37 @@
+[  
+    {  
+        "name":"goblin",
+        "cr":2,
+        "maxHP":10,
+        "DMG":3,
+        "desc":"a hunched, skiddish looking"
+    },
+    {  
+        "name":"zombie",
+        "cr":2,
+        "maxHP":12,
+        "DMG":4,
+        "desc":"a foul, rotting"
+    },
+    {  
+        "name":"fat rat",
+        "cr":1,
+        "maxHP":6,
+        "DMG":2,
+        "desc":"a particularly thick looking"
+    },
+    {  
+        "name":"witch",
+        "cr":2,
+        "maxHP":12,
+        "DMG":4,
+        "desc":"a cackling, green"
+    },
+    {  
+        "name":"skeleton",
+        "cr":2,
+        "maxHP":9,
+        "DMG":5,
+        "desc":"a freaky looking"
+    }
+]

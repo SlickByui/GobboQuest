@@ -1,0 +1,66 @@
+Sprint 3 To Do
+
+///////////////////////////////////////////////////////////////////////
+/ Main Goals
+/
+///////////////////////////////////////////////////////////////////////
+Requirements:
+  1. Conditionals                                      [x] 
+  2. Loops                                             [x]
+  3. Functions                                         [x] 
+  4. Classes                                           [x]
+  5. Data structure from Java Collection Framework   
+     (such as ArrayList, TreeSet, or HashMap)          [x]
+
+Stretch Challenges:
+  - File read/write                                    [x] 
+  - Demonstrate inheritance using extends and abtract  [x]
+  - Create and implement an interface                  []
+
+
+
+///////////////////////////////////////////////////////////////////////
+/  To Do
+/
+///////////////////////////////////////////////////////////////////////
+  - Detailed plan for entity class and child classes                [x]
+  - Look into code salvage from older RPG project                   [x]
+  - Look into possible GUI or custom terminal for project           [x]
+  - Detailed plan for dungeon/floor classes                         []
+  - Algorithm for dungeon/floor generation                          [x]
+  - Attempt to make detailed interaction mapping (ie how player
+    interacts with world and how functions/ classes interact)       []
+  - Dice functions                                                  [x]
+  - Textutils class                                                 [x]
+  - Test the "globility" of player if created in main (or test)     []
+  - Make Textutils slowprint not newline & fix old text             [x]
+  - Look into Debug class for Java                                  []
+  - Rename functions to fit java camelCase                          []
+  - (Potentially) move displayActions to appropriate files          []
+
+///////////////////////////////////////////////////////////////////////
+/  Questions
+/
+///////////////////////////////////////////////////////////////////////
+  - Maps, HashMaps, Dictionaries, TreeMaps, TreeSets, and HashMaps and 
+  their differences.
+  - Pointers in Java?
+  - JFrames?
+
+
+///////////////////////////////////////////////////////////////////////
+/  Stretch
+/
+///////////////////////////////////////////////////////////////////////
+  - JFrames (and custom text boxes)
+  - Flesh out description JSON items
+  - items
+  - XP
+  - Leveling
+  - Character design (classes, weapons, etc)
+  - Looting
+  - DnD style combat 
+    - initiative
+    - attack/dmg rolls
+    - stats
+  

@@ -1,0 +1,10 @@
+{
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "C:\\Users\\slick\\School\\CS 310\\Sprint3\\GobboQuest\\lib\\json-simple-4.0.1.jar"
+
+    ]
+    
+}
