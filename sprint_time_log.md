@@ -39,8 +39,7 @@ The expected minimum amount of time each Sprint for each category is as follows:
 |   2/19   |   19:00  |   ID   | Reading from JSON to objects and monsters  |     210     |
 |   2/20   |   11:00  |   ID   | Created Combat Loop                        |     120     |
 |   2/20   |   12:45  |  MTG   | Presentations/ looking ahead               |     120     |
-|          |          |        |                                            |             |
-|          |          |        |                                            |             |
+|   2/22   |   15:00  |   ID   | Last minute work on project                |     120     |
 |          |          |        |                                            |             |
 
 _Note: Add more rows as needed._

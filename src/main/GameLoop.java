@@ -8,5 +8,11 @@ package main;
  *************************************************************************/
 
 public class GameLoop {
-    
+    //Create Dungeon here?
+
+    public GameLoop() {}  //Might be for now
+
+    public void run() {  //Runs our main game loop until it breaks or finishes
+
+    }
 }

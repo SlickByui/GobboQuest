@@ -36,7 +36,8 @@ Stretch Challenges:
   - Make Textutils slowprint not newline & fix old text             [x]
   - Look into Debug class for Java                                  []
   - Rename functions to fit java camelCase                          []
-  - (Potentially) move displayActions to appropriate files          []
+  - (Potentially) move displayActions to appropriate files          [x]
+  - Make Player a Singleton Class                                   []
 
 ///////////////////////////////////////////////////////////////////////
 /  Questions

@@ -1,7 +1,7 @@
 package entity;
 import game_utils.*;
 
-public class Player extends Entity{
+public class Player extends Entity{    //Make singlet
     private Boolean isBlocking;
 
     public Player(int maxHP, int DMG) {

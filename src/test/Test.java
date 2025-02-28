@@ -1,23 +1,21 @@
 package test;
 import main.*;
 import game_utils.*;
-
-import java.util.List;
-
+//import java.util.List;
 import entity.*;  //do we need these if we are importing main, or is it all imported through main?
 
 
 //Test class and package used to test the various functions built thus far
 public class Test {
     protected Player player;
-    protected List<Monster> monsters;
+    protected Monster testMonster;
     
     public static void main(String[] args) {
         //Runs through and tests all of our test functions
         Test test = new Test();
         test.TestDiceRoll();
         test.TestTextUtils();
-        test.TestMonsterListCreation();
+        test.TestDungeonClass();
         test.TestCombatLoop();
     }
 
@@ -42,20 +40,22 @@ public class Test {
         TextUtils.SlowPrintln(testString);
     }
 
-    public void TestMonsterListCreation() {
+    public void TestDungeonClass() {
         PrintNewline();
-        System.out.println("Testing our monster list creation, reading from a json file: ");
-        Game testGame = new Game();
-        testGame.CreateMonsterList();
-        for (Monster monster : testGame.monsters) {
-            TextUtils.SlowPrintln(monster.toString());
+        System.out.println("Testing our Dungeon.java class: ");
+        Dungeon testDungeon = new Dungeon();
+        testDungeon.generateDungeon();  //Generate our new dungeon
+        testMonster = testDungeon.getMonster();
+
+        //Check to see if our floors match our monsters
+        for (Floor floor : testDungeon.getFloorList()) {
+            System.out.println("Floor monster: " + floor.getMonster().getName() + " Desc: " + floor.getFloorDesc());
         }
-        monsters = testGame.monsters; //set our local monsters to test monsters
     }
 
     public void TestCombatLoop() {
         player = new Player(20, 5);
-        CombatLoop combatLoop = new CombatLoop(player, monsters.get(0));
+        CombatLoop combatLoop = new CombatLoop(player, testMonster);
         boolean combat = combatLoop.Start();
         if (combat) {
             System.out.println("Player won");
@@ -64,6 +64,4 @@ public class Test {
             System.out.println("Player Died");
         }
     }
-
-
 }

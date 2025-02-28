@@ -28,10 +28,10 @@
         "desc":"a cackling, green"
     },
     {  
-        "name":"skeleton",
+        "name":"Skeleton King",
         "cr":2,
-        "maxHP":9,
+        "maxHP":20,
         "DMG":5,
-        "desc":"a freaky looking"
+        "desc":"a royal, awesome looking"
     }
 ]
