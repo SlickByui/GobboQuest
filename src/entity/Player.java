@@ -2,15 +2,28 @@ package entity;
 import game_utils.*;
 
 public class Player extends Entity{    //Make singlet
+    private static Player single_instance = null;
     private Boolean isBlocking;
 
-    public Player(int maxHP, int DMG) {
+    private Player(int maxHP, int DMG) {
         super(maxHP, DMG);
         isBlocking = false;
     }
 
+    public static synchronized Player getInstance(int maxHP, int DMG)
+    {
+        if (single_instance == null)
+            single_instance = new Player(maxHP, DMG);
+
+        return single_instance;
+    }
+
+    public static synchronized Player getInstance() 
+    {
+        
+    }
+
     //Player specific methods
-    
     public void Rest() { //Resting currently sets your health back to max (if you aren't in combat)
         //need to add conditional for combat
         currentHP = maxHP;
