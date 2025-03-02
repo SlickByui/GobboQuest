@@ -1,7 +1,7 @@
 package entity;
 import game_utils.*;
 
-public class Player extends Entity{    //Make singlet
+public class Player extends Entity{    
     private static Player single_instance = null;
     private Boolean isBlocking;
 
@@ -18,9 +18,10 @@ public class Player extends Entity{    //Make singlet
         return single_instance;
     }
 
+    //Used for time when we don't want to pass in vars (another way around this?)
     public static synchronized Player getInstance() 
     {
-        
+        return single_instance;
     }
 
     //Player specific methods

@@ -10,9 +10,10 @@ import game_utils.TextUtils;
 import entity.Player;
 
 public class Game{
-    public Player player;
+    public Player player;    //singleton class shoudl only allow one player
     //private GameLoop gameLoop = new GameLoop();
     public Dungeon dungeon;
+    public Boolean stillPlaying;
     public static void main(String[] args) {
         new Game();
     }
@@ -26,8 +27,8 @@ public class Game{
 
     public void initialize() {
         //Game initialization
-        player = new Player(20, 4);   //Create our player
-        dungeon = new Dungeon();                //Create our new dungeon
+        player = Player.getInstance(20, 5);   //Create our player
+        dungeon = new Dungeon();                        //Create our new dungeon
         dungeon.generateDungeon();
     }
 
@@ -38,8 +39,20 @@ public class Game{
         return;
     }
 
-    public void runGameLoop() {
+    //Main game loop
+    public void runGameLoop() 
+    {
+        //Display first floor of dungeon manually
+        dungeon.getCurrentFloor().displayFloorDesc();
         
+    
+
+        //Check to make sure the game is still running
+        while (stillPlaying && player.IsAlive())
+        {
+
+
+        }
     }
 
     public void displayOutro() {

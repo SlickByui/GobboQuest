@@ -84,6 +84,9 @@ public class Dungeon {
         currentFloor.displayFloorDesc();
     }
 
+    //Get current floor
+    public Floor getCurrentFloor() {return currentFloor;}
+
     //Return the current floors monster
     public Monster getMonster() {
         return currentFloor.getMonster();  //Feels redundant, potentially

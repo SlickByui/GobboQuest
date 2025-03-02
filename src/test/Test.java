@@ -54,7 +54,7 @@ public class Test {
     }
 
     public void TestCombatLoop() {
-        player = new Player(20, 5);
+        player = Player.getInstance();
         CombatLoop combatLoop = new CombatLoop(player, testMonster);
         boolean combat = combatLoop.Start();
         if (combat) {
