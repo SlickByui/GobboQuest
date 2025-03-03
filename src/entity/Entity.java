@@ -26,7 +26,7 @@ public abstract class Entity {
         return currentHP;
     }
 
-    public void TakeDamage(int damage) {
+    public void takeDamage(int damage) {
         currentHP -= damage;
 
         //Check to see if entity is still alive
@@ -35,11 +35,11 @@ public abstract class Entity {
         }
     }
 
-    public int Attack() {
+    public int attack() {
         return DMG;
     }
 
-    public Boolean IsAlive() {
+    public Boolean isAlive() {
         return isAlive;
     }
 }

@@ -12,22 +12,21 @@ import game_utils.*;
 import java.util.Scanner;
 
 public class CombatLoop {
-    private Player player;  //Can we do this or does this make a new player?
-    private Monster monster;
+    private Player player;  //Is this needed for SIngleton class
+    //private Monster monster;
 
     //Loop inside constructor?
-    public CombatLoop(Player player, Monster monster) { //do we need to pass in player?  (for now we will, and only use 1 monster)
-        this.player = player;
-        this.monster = monster;
+    public CombatLoop() { //do we need to pass in player?  (for now we will, and only use 1 monster)
+        this.player = Player.getInstance();
     }  
 
-    public Boolean Start() {
+    public Boolean start(Monster monster) {       //might want to make this void, as we aren't using it
         Scanner scanner = new Scanner(System.in); //This is for reading input from players (do we need do this every loop?)
         //Clear screen before we start
         TextUtils.clearScreen();
 
         //Start loop, condition is that both monster and player are alive
-        while (player.IsAlive() && monster.IsAlive()) {
+        while (player.isAlive() && monster.isAlive()) {
 
             //Player goes first for the time being
             displayCombatActions();
@@ -38,23 +37,23 @@ public class CombatLoop {
                     //For now, will display here, but should probably move into player or somewhere else
                     TextUtils.SlowPrintln("You take a swing at the " + monster.getName() + ".");  //how would we get monster name?
                     TextUtils.Pause(100);
-                    monster.TakeDamage(player.Attack());
-                    TextUtils.SlowPrintln("You Hit! You deal " + player.Attack() + " dmg to the " + monster.getName() + ".");
+                    monster.takeDamage(player.attack());
+                    TextUtils.SlowPrintln("You Hit! You deal " + player.attack() + " dmg to the " + monster.getName() + ".");
                     break;
 
                 case 2: //Block 
                     //Probably a temp solution, if we include AC and such, this will probably be depracated
-                    player.Block();
+                    player.block();
                     break;
 
                 case 3: //Do a funny dance
-                    player.DoFunnyDance();
+                    player.doFunnyDance();
                     TextUtils.SlowPrintln(" in front of the " + monster.getName() + ".");
                     TextUtils.SlowPrintln("While impressed, the " + monster.getName() + " does not budge otherwise.");
                     break;
 
                 case 4: //Heal
-                    player.Heal();
+                    player.heal();
                     TextUtils.SlowPrintln("You pull out a potion and chug it down in one gulp!");
                     TextUtils.SlowPrintln("(The " + monster.getName() + " is disturbed.)");
                     TextUtils.SlowPrintln("Your health is now back to full.");
@@ -65,24 +64,24 @@ public class CombatLoop {
             }
 
             //Break out of loop if monster is dead
-            if (!monster.IsAlive()) {
+            if (!monster.isAlive()) {
                 break;  //Should break out of while loop
             }
 
             //For now, monster will just attack
             TextUtils.SlowPrintln("The " + monster.getName() + " tries to attack you!");
-            if (player.IsBlocking()) {
+            if (player.isBlocking()) {
                 TextUtils.SlowPrintln("But you deflect its attack with your shield!");
             }
             else {
-                player.TakeDamage(monster.Attack());
-                TextUtils.SlowPrintln("Ouch! You take "+ monster.Attack() + " pts of damage!");
+                player.takeDamage(monster.attack());
+                TextUtils.SlowPrintln("Ouch! You take "+ monster.attack() + " pts of damage!");
             }
             TextUtils.Pause(100);
         }
         scanner.close();
         //After combat, check to see if player is still alive
-        if (!player.IsAlive()) {  //if not, return false
+        if (!player.isAlive()) {  //if not, return false  (these might be redundant w/ whats in Game)
             return false;
         }
         else {                    //if they are, return true

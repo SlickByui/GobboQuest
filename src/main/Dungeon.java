@@ -13,7 +13,7 @@ public class Dungeon {
     private List<String> floorDescs;    //Descriptions of our floors
     private List<Monster> monsters;
     private int FLOOR_IDX = 0;          //Start floor at 0
-    private Floor currentFloor;         
+    private Floor currentFloor;                 
 
     //Empty for now
     public Dungeon(){}
@@ -71,17 +71,18 @@ public class Dungeon {
         //Set current floor to the first floor
         currentFloor = floors.get(FLOOR_IDX);
     }
+    public Boolean isLastFloor() {
+        if (FLOOR_IDX == floors.size()-1) {
+            return true;
+        }
+        else {return false;}
+    }
 
     //Enter the next floor, display the intro 
     public void nextFloor() {
-        //Check to see if last floor(?)
-
         //Switch next floor in list to current floor
         FLOOR_IDX += 1;
         currentFloor = floors.get(FLOOR_IDX);
-
-        //Display next floor desc
-        currentFloor.displayFloorDesc();
     }
 
     //Get current floor
@@ -92,7 +93,7 @@ public class Dungeon {
         return currentFloor.getMonster();  //Feels redundant, potentially
     }
 
-    public List<Floor> getFloorList() {
+    public List<Floor> getFloorList() {  //Exclusively a testing function, might want to remove
         return floors;
     }
 }

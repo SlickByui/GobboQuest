@@ -7,24 +7,36 @@ import entity.*;  //do we need these if we are importing main, or is it all impo
 
 //Test class and package used to test the various functions built thus far
 public class Test {
-    protected Player player;
-    protected Monster testMonster;
+    private Monster testMonster;
+    private ExplorationLoop explorationLoop;
+    private CombatLoop combatLoop;
     
     public static void main(String[] args) {
         //Runs through and tests all of our test functions
         Test test = new Test();
         test.TestDiceRoll();
         test.TestTextUtils();
+        test.TestPlayerClass();
         test.TestDungeonClass();
-        test.TestCombatLoop();
+        test.TestExplorationLoop();
+        //test.TestCombatLoop();
     }
 
     //Blank constructor
-    public Test() {}
+    public Test() {
+        Player.getInstance(20, 5);  //Initialize player class instance
+    }
 
     public void PrintNewline() {
         System.out.println("");
         System.out.println("==========================================");
+    }
+
+    public void TestPlayerClass() {
+        PrintNewline();
+        //Test whether the Singleton class works with just a basic initialization
+        System.out.println("Player Health: " + Player.getInstance().getHP());
+        System.out.println("Player DMG: " + Player.getInstance().attack());
     }
 
     public void TestDiceRoll() {
@@ -53,15 +65,20 @@ public class Test {
         }
     }
 
-    public void TestCombatLoop() {
-        player = Player.getInstance();
-        CombatLoop combatLoop = new CombatLoop(player, testMonster);
-        boolean combat = combatLoop.Start();
+    public void TestCombatLoop() {  //System might be redundant, double check
+        combatLoop = new CombatLoop();
+        boolean combat = combatLoop.start(testMonster);
         if (combat) {
             System.out.println("Player won");
         }
         else {
             System.out.println("Player Died");
         }
+    }
+
+    public void TestExplorationLoop()
+    {
+        explorationLoop = new ExplorationLoop();
+        explorationLoop.start();
     }
 }

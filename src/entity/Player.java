@@ -25,35 +25,34 @@ public class Player extends Entity{
     }
 
     //Player specific methods
-    public void Rest() { //Resting currently sets your health back to max (if you aren't in combat)
+    public void rest() { //Resting currently sets your health back to max (if you aren't in combat)
         //need to add conditional for combat
         currentHP = maxHP;
     }
 
     //Function displays the actions the player can take during combat (static for now)
-
-    public void Heal() {
+    public void heal() {
         //Currently just heals to full, can be used infinitely
         currentHP = maxHP;
     }
 
-    public void Block() {
+    public void block() {
         //Set block equal to true
         isBlocking = true;
         TextUtils.SlowPrintln("You raise your shield to block the enemies next attack!");  //Maybe put these in combatloop
     }
 
-    public void UnBlock() {
+    public void unBlock() {
         //Set block equal to false
         isBlocking = false;
         TextUtils.SlowPrintln("You lower your shield preparing for your next move.");  //Would be funny if we tracked these 
     }
 
-    public Boolean IsBlocking() {
+    public Boolean isBlocking() {
         return isBlocking;
     }
 
-    public void DoFunnyDance() {
+    public void doFunnyDance() {
         TextUtils.SlowPrint("You decide the best course of action is to break it down");
         return;
     }

@@ -15,14 +15,16 @@ import java.util.Scanner;
 
 public class ExplorationLoop {
     private Player player;
+    private Boolean leaveDungeon = false; //default to false (not sure if this is needed?)
 
-    public ExplorationLoop(Player player) {
-        this.player = player;
+    public ExplorationLoop() {
+        this.player = Player.getInstance();  //see if this works as intended
     }
 
     public void start() {
         Boolean stillExploring = true;
         Scanner scanner = new Scanner(System.in);
+        TextUtils.clearScreen();
         
         //Run through loop while player is still exploring
         while (stillExploring) {
@@ -34,26 +36,30 @@ public class ExplorationLoop {
                     break;
 
                 case 2: //Rest
-                    player.Rest();
+                    player.rest();
                     TextUtils.SlowPrintln("You decide to take a small break to heal your wounds.");
                     break;
 
                 case 3: //Do a funny dance
-                    player.DoFunnyDance();
+                    player.doFunnyDance();
                     TextUtils.SlowPrintln(" after your victory.");
                     TextUtils.SlowPrintln("It looks really good. Too bad no one was here to see it...");
                     break;
 
                 case 4: //Leave the dungeon
                     //Need to figure out the logic of this
+                    stillExploring = false;
+                    leaveDungeon = true;
                     break;
             
-                default: //need to implement 
+                default: //need to implement else case
                     break;
             }
+            scanner.close();
         }
-        scanner.close();
     }
+
+    public Boolean leavingDungeon() {return leaveDungeon;}
 
     private void displayCalmActions() {   //might want to move this to Exploration class
         System.out.println("===============================================================");

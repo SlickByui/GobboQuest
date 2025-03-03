@@ -37,7 +37,9 @@ Stretch Challenges:
   - Look into Debug class for Java                                  []
   - Rename functions to fit java camelCase                          []
   - (Potentially) move displayActions to appropriate files          [x]
-  - Make Player a Singleton Class                                   []
+  - Make Player a Singleton Class                                   [x]
+  - Finish all the displays for Game class (intro, outro, etc)      []
+  - 
 
 ///////////////////////////////////////////////////////////////////////
 /  Questions
